@@ -24,6 +24,8 @@ def status(request):
         response += "<dl>"
         for key, value in sorted(response_dict.items()):
             response += "<dt>%s</dt>" % str(key)
+            if isinstance(value, dict):
+                value = ', '.join("%s: %s" % (k, v) for (k, v) in value.iteritems())
             response += "<dd>%s</dd>" % str(value)
         response += "</dl>"
 
