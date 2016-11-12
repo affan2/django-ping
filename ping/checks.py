@@ -38,6 +38,7 @@ def checks(request):
 
     return response_dict
 
+
 # DEFAULT SYSTEM CHECKS
 
 # Database
@@ -48,6 +49,7 @@ def check_database_sessions(request):
         return 'db_sessions', True
     except:
         return 'db_sessions', False
+
 
 def check_database_sites(request):
     from django.contrib.sites.models import Site
