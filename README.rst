@@ -25,7 +25,7 @@ Hitting the endpoint returns a simple status 200 response.
 You can customize the message by adding to your Django settings::
 
     PING_DEFAULT_RESPONSE = "All systems go!"
-    PING_DEFAULT_MIMETYPE = 'text/html'
+    PING_DEFAULT_CONTENT_TYPE = 'text/html'
 
 Hitting the url::
 
