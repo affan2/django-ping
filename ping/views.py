@@ -4,9 +4,9 @@ from django.http import HttpResponse
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 
-from ping.defaults import PING_DEFAULT_RESPONSE, PING_DEFAULT_CONTENT_TYPE
-from ping.checks import checks
-from ping.decorators import http_basic_auth
+from .defaults import PING_DEFAULT_RESPONSE, PING_DEFAULT_CONTENT_TYPE
+from .checks import checks
+from .decorators import http_basic_auth
 
 
 @csrf_exempt
@@ -25,7 +25,7 @@ def status(request):
         for key, value in sorted(response_dict.items()):
             response += "<dt>%s</dt>" % str(key)
             if isinstance(value, dict):
-                value = ', '.join("%s: %s" % (k, v) for (k, v) in value.iteritems())
+                value = ', '.join("%s: %s" % (k, v) for (k, v) in iter(value.items()))
             response += "<dd>%s</dd>" % str(value)
         response += "</dl>"
 

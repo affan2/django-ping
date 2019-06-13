@@ -5,7 +5,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 from django.contrib.auth import get_user_model
 
-from ping.defaults import PING_DEFAULT_CHECKS, PING_CELERY_TIMEOUT
+from .defaults import PING_DEFAULT_CHECKS, PING_CELERY_TIMEOUT
 
 
 AUTH_USER_MODEL = getattr(settings, "AUTH_USER_MODEL", "auth.User")
@@ -100,7 +100,7 @@ def check_user_exists(request):
 def check_celery(request):
     from datetime import datetime, timedelta
     from time import sleep, time
-    from ping.tasks import sample_task
+    from .tasks import sample_task
 
     now = time()
     datetimenow = datetime.now()

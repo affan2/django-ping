@@ -1,11 +1,10 @@
 from functools import wraps
-import base64
 
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.conf import settings
 
-from ping.defaults import PING_BASIC_AUTH
+from .defaults import PING_BASIC_AUTH
 
 
 def http_basic_auth(func):
