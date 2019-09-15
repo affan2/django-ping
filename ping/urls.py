@@ -1,7 +1,6 @@
-from django.conf.urls import url
+from django.conf.urls import re_path
 from .views import status
 
 urlpatterns = [
-    '',
-    url(r'^$', status, name='status'),
+    re_path(r'^$', status, name='status'),
 ]

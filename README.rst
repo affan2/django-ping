@@ -16,7 +16,7 @@ Use pip to download and install::
 
 Add Django Ping to url conf::
 
-        url(r'^ping/', include('ping.urls')),
+        re_path(r'^ping/', include('ping.urls')),
 
 Basic Configuration
 -------------------
